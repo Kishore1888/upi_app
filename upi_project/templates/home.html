@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI PAYMENT APPLICATION</title>
+    <!-- <script src="{% static 'home.js' %}" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left">
+            <!-- <img src="{% static 'hm.webp' %}" alt="image"> -->
+            <h3>Payment</h3>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="account">
+                <button id="open-popup-btn">Scan QR</button>
+                <!-- <i class="fa fa-user-o"></i> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- kyc section -->
+    <div class="kyc"><b>No Wallet KYC Required</b>
+        😊to pay using UPI on Paytm.
+        <b><a href="#"> Learn more..</a></b>
+    </div>
+
+
+    <!--popup div for the user qrcode section --->
+    <div class="popup-overlay"></div>
+    <div class="popup">
+        <div class="pop-page">
+            <div class="steps"><img src="{% static 'QRcode.png' %}" alt=""></div>
+            <div class="qrcode">P2F <br> P2f@UPI</div>
+        </div>    
+        <div class="popup-close-btn">&times;</div>
+    </div>
+
+
+    <!-- second session  -->
+    <div class="section-2">
+        <div class="left-section">
+            <div class="left-content">
+                <h1>The Most Reliable UPI Payment App in the Country.</h1>
+                <p>With the Paytm App, Transfer Funds or Pay anyone without a worry in the world. It is convenient with
+                    built-in safety features & easy access to your account balance & payment history.</p>
+                <button><a href="http://127.0.0.1:8000/loginpage">Register Your Bank Account</a></button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="right-content">
+                <img src="{% static 'bnk.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var openpopupBtn = document.querySelector("#open-popup-btn");
+        var closePopBtn = document.querySelector(".popup-close-btn");
+
+        openpopupBtn.addEventListener("click", function () {
+            document.body.classList.add("popup-active")
+        });
+
+        closePopBtn.addEventListener("click", function () {
+            document.body.classList.remove("popup-active")
+        });
+    </script>
+</body>
+
+</html>
